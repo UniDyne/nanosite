@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>{{page.title}} - {{site.name}}</title>
+
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="css/docs.css"/>
+
+</head>
+<body>
+<div class="page-wrap">
+{%header%}
+
+<div class="content-wrap">
+    <h1>{{page.title}}</h1>
+
+<div class="nav"><ul>
+{%EACH TOC}
+<li class="toc1"><a href="{{file}}">{{title}}</a>
+    {%IF toc.length}<ul>{%EACH toc}
+    <li class="toc{{l}}"><a href="{{file}}#{{n}}">{{t}}</a></li>
+    {%ENDEACH}</ul>{%ENDIF}
+</li>
+{%ENDEACH}
+</ul></div>
+
+    {{content}}
+</div>
+
+{%footer%}
+</div>
+</body>
+</html>
