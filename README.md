@@ -1,3 +1,10 @@
+## Update 2022
+
+It's been two years and it's time to amp this up with some new features in preparation for a different project I am working on.
+
+* Eliminated need for curly braces in front matter - except for nesting. This was a TODO in the original version.
+* Grossly expanded Markdown capabilities using Markdeeper, a project I've been using for offline MD processing that is based on Markdeep.
+
 
 ## A simplified static site builder written in NodeJS.
 
@@ -14,8 +21,3 @@ The Markdown is very simplified, but all heading tags are thrown into a toc arra
 
 I am not including any stylesheets right now.
 
-
-## Future Work
-
-* Elimintate need for curly braces in front matter - except for nesting.
-* Expand Markdown compatibility - namely, support for tables.

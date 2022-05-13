@@ -1,0 +1,20 @@
+{
+	"name": "nanosite",
+	"version": "0.3",
+	"description": "A small site generator inspired by Jekyll.",
+	"main": "main.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/unidyne/nanosite.git"
+	},
+	"keywords": [],
+	"author": "D. Oliver Brown <unidyne AT gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/unidyne/nanosite/issues"
+	},
+	"homepage": "https://github.com/unidyne/nanosite#readme",
+	"dependencies": {
+		"markdeeper": "git://github.com/unidyne/markdeeper.git"
+	}
+}

@@ -5,8 +5,8 @@
 const
     fs = require("fs"),
     path = require("path"),
-    Markdown = require("./Markdown");
-
+    //Markdown = require("./Markdown");
+    Markdeeper = require("markdeeper");
 
 function loadData(filename, meta) {
     var data = {
@@ -17,9 +17,9 @@ function loadData(filename, meta) {
     var raw = fs.readFileSync(filename, 'utf8');
 
     // fontmatter
-    var found = raw.match(/^---\{([\s\S]*?)\}---$/m);
+    var found = raw.match(/^---\{?([\s\S]*?)\}?---$/m);
     if(found) try {
-        var jdat = found[0].replace(/^---/,'').replace(/---$/,''); // strip start and end
+        var jdat = found[0].replace(/^---\{?/,'{').replace(/\}?---$/,'}'); // strip start and end
         jdat = jdat.replace(/(['"])?([a-zA-Z0-9_$]+)(['"])?:/g, '"$2": '); // fix quotes
         data.frontmatter = JSON.parse(jdat); // parse json
         data.tmpl = raw.replace(found[0], ''); // remove frontmatter
@@ -45,7 +45,8 @@ module.exports = class Content {
         var partial = this.data.tmpl.replace(/\{\{([A-Za-z0-9_\.]*)\}\}/g, (w,g) => (g.replace(/^\s+|\s+$/g,'').split('.').reduce((o,i)=>o[i],data) || w));
         
         // process markdown
-        var md = Markdown.exec(partial);
+        //var md = Markdown.exec(partial);
+        var md = Markdeeper.processSection(partial);
         data.content = md.content;
         data.toc = md.toc;
         
