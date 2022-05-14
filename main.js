@@ -19,7 +19,7 @@ const Config  = {
 
 
 
-!function main() {
+!async function main() {
     var files = fs.readdirSync(path.join(__dirname, 'content'));
 
     Config.TOC = [];
@@ -36,7 +36,7 @@ const Config  = {
         if(st.isDirectory()) continue; // do not recurse for now
         
         var c = new Content(path.join(__dirname, 'content', files[i]), st);
-        var data = c.process(Config);
+        var data = await c.process(Config);
 
         var out = Template.process(data);
 

@@ -35,7 +35,7 @@ module.exports = class Content {
         this.data = loadData(filename, meta);
     }
 
-    process(data) {
+    async process(data) {
 
         // merge default data with frontmatter
         Object.assign(data.page, this.data.frontmatter);
@@ -46,7 +46,7 @@ module.exports = class Content {
         
         // process markdown
         //var md = Markdown.exec(partial);
-        var md = Markdeeper.processSection(partial);
+        var md = await Markdeeper.processSection(partial);
         data.content = md.content;
         data.toc = md.toc;
         
