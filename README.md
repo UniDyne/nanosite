@@ -1,3 +1,8 @@
+## Update 2024
+
+This project is deprecated in favor of [trilliant-static](//github.com/UniDyne/trilliant-static), another project based on this one that integrates with Grunt.
+
+
 ## Update 2022
 
 It's been two years and it's time to amp this up with some new features in preparation for a different project I am working on.
